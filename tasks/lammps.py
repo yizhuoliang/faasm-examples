@@ -43,6 +43,8 @@ def build(
         "cmake",
         "-GNinja",
         "-DCMAKE_BUILD_TYPE=Release",
+        "-DPKG_MANYBODY=on",
+        "-DPKG_MOLECULE=on",
     ]
 
     if native:
@@ -56,6 +58,7 @@ def build(
             "-DLAMMPS_FAASM=ON",
             "-DCMAKE_TOOLCHAIN_FILE={}".format(CMAKE_TOOLCHAIN_FILE),
         ]
+
     if in_docker():
         cmake_cmd += [cmake_dir]
         cmake_cmd = " ".join(cmake_cmd)
@@ -65,7 +68,6 @@ def build(
 
         run(cmake_cmd, shell=True, check=True, cwd=build_dir, env=work_env)
         run("ninja", shell=True, check=True, cwd=build_dir)
-
     else:
         in_docker_cmake_dir = cmake_dir
         in_docker_cmake_dir = cmake_dir.removeprefix(EXAMPLES_DIR)
