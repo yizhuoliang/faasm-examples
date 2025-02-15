@@ -46,6 +46,7 @@ def build(
         "-DPKG_MANYBODY=on",
         "-DPKG_MOLECULE=on",
         "-DPKG_KSPACE=on",
+        "-DFFT=NONE",
     ]
 
     if native:
