@@ -41,7 +41,7 @@
 	url = https://github.com/faasm/polybench.git
 [submodule "examples/lammps-migration-net"]
 	path = examples/lammps-migration-net
-	url = https://github.com/faasm/lammps.git
+	url = https://github.com/yizhuoliang/lammps.git
 	branch = faasm-migration-net
 [submodule "examples/Kernels-elastic"]
 	path = examples/Kernels-elastic
