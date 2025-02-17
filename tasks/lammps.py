@@ -45,8 +45,6 @@ def build(
         "-DCMAKE_BUILD_TYPE=Release",
         "-DPKG_MANYBODY=on",
         "-DPKG_MOLECULE=on",
-        "-DPKG_KSPACE=on",
-        "-DFFT=KISS",
     ]
 
     if native:
